@@ -14,7 +14,7 @@
 		
 		if(move_uploaded_file($file_temp, $location)){
 			mysqli_query($conn, "INSERT INTO `storage` VALUES('', '$file_name', '$file_type', '$date', '$userl')") or die(mysqli_error());
-			header('location: student_profile.php');
+			header('location: dashboard.php');
 		}
 	}
 ?>
