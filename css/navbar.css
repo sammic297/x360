@@ -1,0 +1,14 @@
+body {
+  font-family: effra,sans-serif; 
+  font-weight: 400;
+  padding-bottom: 0px;
+  overflow-x: hidden;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.player {
+	margin:0; padding:0; display:flex; background:#7A419B; min-height: 100vh; background:linear-gradient(135deg, #7c1599 0%,#921099 48%,#7e4ae8 100%); background-size:cover; align-items: center; justify-content: center;
+}
