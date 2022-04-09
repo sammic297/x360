@@ -519,7 +519,7 @@ a.selected {
 /* Discography sectionr*/
 .block-album {
 	border-radius: 3px;
-	border: 1px solid #444444;
+	/* border: 1px solid #444444; */
 	overflow: hidden;
 }
 
