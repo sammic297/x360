@@ -1,14 +1,14 @@
-(function($) {
+(function ($) {
     "use strict";
 
     // Windows load
 
-    $(window).on("load", function() {
+    $(window).on("load", function () {
 
         // Site loader 
 
         $(".loader-inner").fadeOut();
-        $(".loader").delay(200).fadeOut("slow");
+        $(".loader").delay(0).fadeOut("slow");
 
     });
 
@@ -20,7 +20,7 @@
         pos = header.offset(),
         blockTop = $('.block-top');
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > pos.top + 100 && header.hasClass('stopping')) {
             header.addClass('scrolling').removeClass('stopping');
             blockTop.addClass('active');
@@ -60,7 +60,7 @@
     var nav = $('.main-nav ul');
     var navHeight = nav.height();
 
-    $(mobileBtn).on("click", function() {
+    $(mobileBtn).on("click", function () {
         $(".toggle-mobile-but").toggleClass("active");
         nav.slideToggle();
         $('.main-nav li a').addClass('mobile');
@@ -69,7 +69,7 @@
 
     });
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         var w = $(window).width();
         if (w > 320 && nav.is(':hidden')) {
             nav.removeAttr('style');
@@ -78,7 +78,7 @@
 
     });
 
-    $('.main-nav li a').on("click", function() {
+    $('.main-nav li a').on("click", function () {
         if ($(this).hasClass('mobile')) {
             nav.slideToggle();
             $(".toggle-mobile-but").toggleClass("active");
@@ -90,7 +90,7 @@
 
     // Append images as css background
 
-    $('.background-img').each(function() {
+    $('.background-img').each(function () {
         var path = $(this).children('img').attr('src');
         $(this).css('background-image', 'url("' + path + '")').css('background-position', 'initial');
     });
@@ -98,14 +98,14 @@
 
     // Count down setup
 
-    $('.countdown').countdown('2018/10/20', function(event) {
+    $('.countdown').countdown('2018/10/20', function (event) {
         $(this).html(event.strftime('%D days %H:%M:%S'));
     });
 
 
     // Tabbed content 
 
-    $(".block-tabs li").on("click", function() {
+    $(".block-tabs li").on("click", function () {
         if (!$(this).hasClass("active")) {
             var tabNum = $(this).index();
             var nthChild = tabNum + 1;
@@ -123,7 +123,7 @@
 
     var playlist = $('.album');
     var a = audiojs.create(playlist, {
-        trackEnded: function() {
+        trackEnded: function () {
             var next = $('.playlist li.playing').next();
             if (!next.length) next = $('.playlist li').first();
             next.addClass('playing').siblings().removeClass('playing');
@@ -140,7 +140,7 @@
 
 
 
-    $('.playlist li').on("click", function() {
+    $('.playlist li').on("click", function () {
         if ($(this).attr('class') == 'playing') {
             $(this).addClass('pause');
             audio.playPause();
@@ -156,7 +156,7 @@
     });
 
 
-    $('.toggle-lyrics').on('click', function() {
+    $('.toggle-lyrics').on('click', function () {
         $(this).closest('.playlist li').find('.block-lyrics').slideToggle();
         $(this).toggleClass('selected');
         return false;
@@ -198,7 +198,7 @@
     // Gallery filter
 
 
-    $('.block-filter li a').on("click", function(e) {
+    $('.block-filter li a').on("click", function (e) {
 
         e.preventDefault();
         $(this).addClass('active');
@@ -248,7 +248,7 @@
     //Twitter setup
 
     var config = {
-        "profile": {"screenName": 'mutationthemes'},
+        "profile": { "screenName": 'mutationthemes' },
         "domId": 'block-tweets',
         "maxTweets": 2,
         "showRetweet": false,
