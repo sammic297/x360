@@ -1610,4 +1610,22 @@ ol.playlist .col-lg-6 a {
 	}
 }
 
+hr {
+	border: none;
+	border-top: 3px double rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+	overflow: visible;
+	text-align: center;
+	height: 5px;
+}
+
+hr:after {
+	background: rgb(255, 255, 255);
+	content: ' ';
+	padding: 0 4px;
+	position: relative;
+	top: -13px;
+}
+
+
 /*End media queries*/
