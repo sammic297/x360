@@ -6655,6 +6655,11 @@ button.bg-light:focus {
   background-color: #343a40 !important;
 }
 
+.bg-black {
+  background-color: #000000 !important;
+  
+}
+
 a.bg-dark:hover,
 a.bg-dark:focus,
 button.bg-dark:hover,
@@ -9862,7 +9867,7 @@ a.text-dark:focus {
   }
 
   abbr[title]::after {
-    content: " ("attr(title) ")";
+    content: " (" attr(title) ")";
   }
 
   pre {
