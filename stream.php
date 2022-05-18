@@ -46,10 +46,41 @@
         }
     </style>
 </head>
-
 <body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "stream";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT frm_youtube FROM link";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        ?>
+    
+    <!--stream div begins here-->
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/mpl1MmX_3mU"></iframe>
+        <iframe src="<?php echo "$row[frm_youtube]"; ?>"></iframe>
+        <!--iframe src="https://www.youtube.com/embed/mpl1MmX_3mU"></iframe-->
     </div>
+
+    <?php
+    }
+} else {
+    echo "0 results";
+}
+
+        $conn->close();
+    ?>
 </body>
 </html>
